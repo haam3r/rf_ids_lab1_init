@@ -22,6 +22,7 @@ function checks () {
 function labbootstrap_setup () {
     # Move Lab Bootstrap Service and Script into place
     cp ${LAB_PATH}/setup/labbootstrap.sh /root/running
+    mkdir -p ${SYSTEMD_DIR}
 
     cat > ${SYSTEMD_DIR}/labbootstrap.service << EOF
 [Unit]
