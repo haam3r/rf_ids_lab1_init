@@ -1,6 +1,14 @@
 #!/usr/bin/env bash
 # Global Variables
 SYSTEMD_DIR="/usr/local/lib/systemd/system"
+LAB_PATH="/root/labs/simple-lab-wizard"
+ENVIRONMENT_VARS="${LAB_PATH}/setup/config.sh"
+
+function env_vrs () {
+    # Export the configuration Variables
+    . ${ENVIRONMENT_VARS}
+
+}
 
 function checks () {
     # Check Which environment are we running in
@@ -13,11 +21,8 @@ function labbootstrap_setup () {
     # Create Required Directories
     mkdir -p /root/{running,labs}
 
-    # Export the configuration Variables
-    . /root/labs/simple-lab-wizard/setup/config.sh
-
     # Move Lab Bootstrap Service and Script into place
-    cp /root/labs/simple-lab-wizard/setup/labbootstrap.sh /root/running
+    cp ${LAB_PATH}/setup/labbootstrap.sh /root/running
 
     cat > ${SYSTEMD_DIR}/labbootstrap.service << EOF
 [Unit]
@@ -45,6 +50,6 @@ EOF
     fi
 }
 
-
+env_vrs
 checks
 labbootstrap_setup
