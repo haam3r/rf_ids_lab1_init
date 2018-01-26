@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
-datafile="/root/running/lab_data"
-
+datafile="/root/running/lab_data.ini"
+touch ${datafile}
 export CLIENTIP="192.168.0.100/24"
 export SERVERIPS="192.168.0.200/24 192.168.0.201/24"
 export ROUTERIP="192.168.0.254"

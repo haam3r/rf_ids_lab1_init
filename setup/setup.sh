@@ -4,23 +4,22 @@ SYSTEMD_DIR="/usr/local/lib/systemd/system"
 LAB_PATH="/root/labs/simple-lab-wizard"
 ENVIRONMENT_VARS="${LAB_PATH}/setup/config.sh"
 
+# Create Required Directories
+mkdir -p /root/{running,labs}
+
 function env_vrs () {
+    # Check Which environment are we running in
+    # TODO script to get vars from BIOS
     # Export the configuration Variables
     . ${ENVIRONMENT_VARS}
 
 }
 
 function checks () {
-    # Check Which environment are we running in
-    # TODO script to get vars from BIOS
-
     echo "Here we do all prelimiary checks for lab -- TODO: remove this line from final version"
 }
 
 function labbootstrap_setup () {
-    # Create Required Directories
-    mkdir -p /root/{running,labs}
-
     # Move Lab Bootstrap Service and Script into place
     cp ${LAB_PATH}/setup/labbootstrap.sh /root/running
 
