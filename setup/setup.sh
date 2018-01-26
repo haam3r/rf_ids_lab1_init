@@ -50,6 +50,13 @@ EOF
     fi
 }
 
+function install_deps () {
+    apt update
+    apt install -y jq pwgen
+
+}
+
 env_vrs
+install_deps
 checks
 labbootstrap_setup
