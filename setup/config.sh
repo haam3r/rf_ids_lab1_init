@@ -37,5 +37,5 @@ virtualta_hostname = $VIRTUALTA_HOSTNAME
 lab_id = $LAB_ID
 EOF
 
-# Get labinit.sh from VTA repo
+# Get labinit.sh from VTA repository
 curl -H "accept: application/json" -X POST "${VIRTUALTA_HOSTNAME}/file/${LAB_ID}/${TA_KEY}/labinit.sh" > /root/running/labinit.sh
