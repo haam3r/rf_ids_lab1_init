@@ -1,0 +1,36 @@
+{
+	"DBuser":"root",
+	"DBpass":"rootroot",
+	"DBhost":"localhost",
+	"DBapp_user":"portaluser",
+	"DBapp_pass":"thisismypass",
+	"DBapp_db":"portal",
+	"users":[
+		{"id":1, "username":"Manager", "fullname":"Wayne Yarborough", "password":"taew8iDaveapho", "role":"admin", "image":"assets/uploads/default.png"},
+		{"id":2, "username":"morton", "fullname":"Monte Orton", "password":"ahsughoo4Cua0H", "role":"user", "image":"assets/uploads/default.png"},
+		{"id":3, "username":"rmaple", "fullname":"Randal Maple", "password":"aiW2aikiSoe9ie", "role":"user", "image":"assets/uploads/default.png"},
+		{"id":4, "username":"hmundy", "fullname":"Hiram Mundy", "password":"eeNgeuv3ahtaga", "role":"user", "image":"assets/uploads/default.png"},
+		{"id":5, "username":"gsulli", "fullname":"Georgette Sullivan", "password":"aeHai0eezoe0Oj", "role":"user", "image":"assets/uploads/default.png"},
+		{"id":6, "username":"vkenne", "fullname":"Verna Kennedy", "password":"quaachahSeish9", "role":"user", "image":"assets/uploads/default.png"},
+		{"id":7, "username":"estorm", "fullname":"Emmanuel Storm", "password":"Upheen2ael9ash", "role":"user", "image":"assets/uploads/default.png"}
+	],
+	"posts":[
+		{"id":1, "user_id": 1, "title":"New product coming next month!", "contents":"Next month we will start selling Valkoinen suklaa. It is a high quality white chocolate from Finland", "createdAt":"NOW()", "pinned":"true", "approved":"true"},
+		{"id":2, "user_id": 1, "title":"Sale coming!", "contents":"For the whole next month all dairy products will be -10%!", "createdAt":"NOW()", "pinned":"false", "approved":"true"},
+		{"id":3, "user_id": 3, "title":"Schoggi Schokolade!?", "contents":"The Schoggi Schokolade I bought from you last month was rotten! Can I have my money back?", "createdAt":"NOW()", "pinned":"false", "approved":"false"}
+	],
+	"items":[
+		{"id":1, "code":"CHAI", "name":"Chai", "price": 4.5, "description":"10 boxes x 20 bags"},
+		{"id":2, "code":"TOFU", "name":"Tofu", "price": 9.0, "description":"40 - 100 g pkgs."},
+		{"id":3, "code":"ROSS", "name":"Rössle Sauerkraut", "price": 15.2, "description":"25 - 825 g cans"},
+		{"id":4, "code":"TEAC", "name":"Teatime Chocolate Biscuits", "price": 7.45, "description":"10 boxes x 12 pieces"},
+		{"id":5, "code":"PAVL", "name":"Pavlova", "price": 2.55, "description":"32 - 500 g boxes"}
+	],
+	"reviews":[
+		{"id":1, "item_id":4, "user_id":2, "rating":5, "review":"Thank you!\n\n I love your Chocolate Biscuits!"},
+		{"id":2, "item_id":3, "user_id":3, "rating":5, "review":"Thanks!\n\n This sauerkraut reminds me of my hometown."},
+		{"id":3, "item_id":1, "user_id":6, "rating":2, "review":"I've had better chai."},
+		{"id":4, "item_id":2, "user_id":5, "rating":4, "review":"This tofu isn't half bad."},
+		{"id":5, "item_id":1, "user_id":4, "rating":3, "review":"It's good I guess"}
+	]
+}
