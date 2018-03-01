@@ -30,7 +30,6 @@ Description=LabBootstrap service
 After=routerapi.service
 
 [Service]
-Type=Simple
 WorkingDirectory=/root/labs/
 ExecStart=/root/running/labbootstrap.sh
 Restart=on-failure
