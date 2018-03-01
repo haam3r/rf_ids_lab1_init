@@ -33,7 +33,7 @@ sed -i "s|'index.php'|''|g" /root/labs/ci-modular-target/application/config/conf
 
 # Setup MySQL database
 ssh root@${hostip} apt-get update && apt-get install -y nginx debconf-utils 
-PASS=$(jq '.DBpass' nw.json | cut -d '"' -f 2)
+PASS=$(jq '.DBpass' /root/labs/simple-lab-wizard/nw.json | cut -d '"' -f 2)
 
 ssh root@${hostip} debconf-set-selections <<< "mysql-server mysql-server/root_password password $PASS"
 ssh root@${hostip} debconf-set-selections <<< "mysql-server mysql-server/root_password_again password $PASS"
