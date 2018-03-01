@@ -32,11 +32,12 @@ sed -i "s|http://tiia.rangeforce.com:8888/cyberUK/portal/|http://${host}|g" /roo
 sed -i "s|'index.php'|''|g" /root/labs/ci-modular-target/application/config/config.php
 
 # Setup MySQL database
+ssh root@${hostip} apt-get update && apt-get install -y nginx debconf-utils 
 PASS=$(jq '.DBpass' nw.json | cut -d '"' -f 2)
 
 ssh root@${hostip} debconf-set-selections <<< "mysql-server mysql-server/root_password password $PASS"
 ssh root@${hostip} debconf-set-selections <<< "mysql-server mysql-server/root_password_again password $PASS"
-ssh root@${hostip} apt-get update && apt-get install -y mysql-server
+ssh root@${hostip} apt-get install -y mysql-server
 
 # Remove old instances
 
@@ -266,4 +267,4 @@ fi
 #}
 #EOF
 #
-systemctl restart nginx.service
+ssh root@${hostip} systemctl restart nginx.service
