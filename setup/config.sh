@@ -6,7 +6,7 @@ export SERVERIPS="192.168.0.200/24 192.168.0.201/24"
 export ROUTERIP="192.168.0.254"
 
 # Lab name cannot contain any spaces
-export LAB_NAME="Example-LAB"
+export LAB_NAME="RFIDS-LAB1"
 
 counter=10
 
