@@ -27,7 +27,7 @@ function labbootstrap_setup () {
     cat > ${SYSTEMD_DIR}/labbootstrap.service << EOF
 [Unit]
 Description=LabBootstrap service
-After=routerapi.service
+After=network.service
 
 [Service]
 WorkingDirectory=/root/running/
