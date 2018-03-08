@@ -1,7 +1,7 @@
 #!/bin/bash
 
 attacker="pwdsink.deeppacketcorp.lab"
-attackerip=$(head -n 1 /root/labs/RF_IDS_Lab1_Scripts/scripts/red_ips.txt) 
+attackerip=$(head -n 1 /root/running/red_ips.txt) 
 host="portal.deeppacketcorp.lab"
 hostip="10.10.10.2"
 
