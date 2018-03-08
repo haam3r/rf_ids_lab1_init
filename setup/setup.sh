@@ -27,7 +27,6 @@ function labbootstrap_setup () {
     cat > ${SYSTEMD_DIR}/labbootstrap.service << EOF
 [Unit]
 Description=LabBootstrap service
-After=rc-local.service
 
 [Service]
 WorkingDirectory=/root/running/
