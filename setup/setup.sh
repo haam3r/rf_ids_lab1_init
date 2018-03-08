@@ -31,7 +31,7 @@ After=routerapi.service
 
 [Service]
 WorkingDirectory=/root/labs/
-ExecStart=/root/running/labbootstrap.sh
+ExecStart=/bin/bash /root/running/labbootstrap.sh
 Restart=on-failure
 RestartSec=3
 
