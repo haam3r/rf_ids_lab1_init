@@ -15,9 +15,9 @@ function env_vrs () {
 
 }
 
-function checks () {
-    echo "Here we do all prelimiary checks for lab -- TODO: remove this line from final version"
-}
+#function checks () {
+#    echo "Here we do all prelimiary checks for lab -- TODO: remove this line from final version"
+#}
 
 function labbootstrap_setup () {
     # Move Lab Bootstrap Service and Script into place
@@ -51,11 +51,11 @@ EOF
 
 function install_deps () {
     apt update
-    apt install -y jq pwgen
+    apt install -y jq pwgen python3-pip
 
 }
 
 env_vrs
 install_deps
-checks
+#checks
 labbootstrap_setup
