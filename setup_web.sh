@@ -1,7 +1,17 @@
 #!/bin/bash
 
 attacker="pwdsink.deeppacketcorp.lab"
-attackerip=$(head -n 1 /root/running/red_ips.txt) 
+while true; do
+        if [ -f /root/running/red_ips.txt ]; then
+                echo "File /root/running/red_ips.txt exists"
+                attackerip=$(head -n 1 /root/running/red_ips.txt)
+                break
+        else
+                echo "File /root/running/red_ips.txt does not exist."
+                sleep 5
+        fi
+done
+
 host="portal.deeppacketcorp.lab"
 hostip="10.10.10.2"
 
