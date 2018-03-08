@@ -40,6 +40,7 @@ WantedBy=multi-user.target
 EOF
 
     if [ -f "${SYSTEMD_DIR}/labbootstrap.service" ]; then
+        systemctl daemon-reload
         systemctl enable labbootstrap.service && echo "labbootstrap.service enabled!"
         systemctl start labbootstrap.service && echo "labbootstrap.service started!"
 
