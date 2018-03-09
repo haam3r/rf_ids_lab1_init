@@ -35,6 +35,7 @@ cat > /root/running/lab.ini << EOF
 ta_key = $TA_KEY
 virtualta_hostname = $VIRTUALTA_HOSTNAME
 lab_id = $LAB_ID
+uid = $USER_KEY
 EOF
 
 # Get labinit.sh from VTA repository
