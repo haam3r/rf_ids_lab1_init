@@ -3,13 +3,17 @@
 SYSTEMD_DIR="/usr/local/lib/systemd/system"
 LAB_PATH="/root/labs/simple-lab-wizard"
 ENVIRONMENT_VARS="${LAB_PATH}/setup/config.sh"
+PRODUCT=$(dmidecode -s system-product-name)
 
 # Create Required Directories
 mkdir -p /root/{running,labs}
 
 function env_vrs () {
-    # Check Which environment are we running in
-    # TODO script to get vars from BIOS
+    # Check if this is the template
+    if [ "${PRODUCT}" == "VirtualBox" ]; then
+       echo "Running in template, doing no further setup"
+       exit 0
+    fi
     # Export the configuration Variables
     . ${ENVIRONMENT_VARS}
 
