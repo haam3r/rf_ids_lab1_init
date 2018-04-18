@@ -40,3 +40,14 @@ EOF
 
 # Get labinit.sh from VTA repository
 curl -H "accept: application/json" -X POST "${VIRTUALTA_HOSTNAME}/file/${LAB_ID}/${TA_KEY}/labinit.sh" > /root/running/labinit.sh
+
+apt-get install -y nginx
+mkdir -p /var/www/clipboard
+
+clipboard_link="${VIRTUALTA_HOSTNAME}/clipboard/${LAB_ID}/${USER_KEY}"
+echo $clipboard_link >> /root/running/setup.log
+
+cat > /var/www/clipboard/index.html <<EOF 
+<html><head><meta http-equiv="refresh" content="1; url=$clipboard_link" /></head></html>
+EOF
+chown www-data.www-data /var/www/clipboard/index.html && chmod 0644 /var/www/clipboard/index.html
