@@ -10,6 +10,8 @@ export LAB_NAME="RFIDS-LAB1"
 
 counter=10
 
+apt-get install -y nginx
+
 while [ ${counter} -gt 0  ]; do
 
 curl -H "accept: application/json" -X POST "$(dmidecode -s system-product-name)/labinfo?uuid=$(dmidecode -s system-version)" > ${datafile}
@@ -41,9 +43,8 @@ EOF
 # Get labinit.sh from VTA repository
 curl -H "accept: application/json" -X POST "${VIRTUALTA_HOSTNAME}/file/${LAB_ID}/${TA_KEY}/labinit.sh" > /root/running/labinit.sh
 
-apt-get install -y nginx
-mkdir -p /var/www/clipboard
 
+mkdir -p /var/www/clipboard
 cat > /etc/nginx/sites-enabled/clipboard <<EOF
 server {
         listen 192.168.0.254:80;
