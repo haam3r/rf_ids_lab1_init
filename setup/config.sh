@@ -49,9 +49,6 @@ server {
         listen 192.168.0.254:80;
         root   /var/www/clipboard;
         index index.php index.html;
-        location / {
-        try_files $uri $uri/ /index.php;
-        }
 }
 EOF
 
