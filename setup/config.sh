@@ -52,7 +52,7 @@ server {
 }
 EOF
 
-systemctl reload nginx
+systemctl restart nginx
 
 clipboard_link="${VIRTUALTA_HOSTNAME}/clipboard/${LAB_ID}/${USER_KEY}"
 echo $clipboard_link >> /root/running/setup.log
