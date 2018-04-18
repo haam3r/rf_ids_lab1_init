@@ -44,7 +44,7 @@ curl -H "accept: application/json" -X POST "${VIRTUALTA_HOSTNAME}/file/${LAB_ID}
 apt-get install -y nginx
 mkdir -p /var/www/clipboard
 
-cat > /etc/nginx/sites-available/default <<EOF
+cat > /etc/nginx/sites-enabled/clipboard <<EOF
 server {
         listen 192.168.0.254:80;
         root   /var/www/clipboard;
@@ -54,6 +54,8 @@ server {
         }
 }
 EOF
+
+systemctl reload nginx
 
 clipboard_link="${VIRTUALTA_HOSTNAME}/clipboard/${LAB_ID}/${USER_KEY}"
 echo $clipboard_link >> /root/running/setup.log
